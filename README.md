@@ -1,3 +1,9 @@
+## WHAT IS IT?
+
+This tiny script allows you to fetch LinkedIn profile that matches with given keywords.
+It can be really useful for lead generation.
+
+
 ## HOW TO USE?
 
 Launch a terminal and write these commands:
