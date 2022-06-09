@@ -38,10 +38,8 @@ def profile_search(keywords: [str]) -> [str]:
     search_input.send_keys(search_query)
     search_input.send_keys(Keys.RETURN)
 
-    linkedin_links = driver.find_elements(by=By.CLASS_NAME, value='iUh30')
-    linkedin_names = [link.find_element_by_tag_name('span').text.replace('› ', '') for link in linkedin_links]
-    linkedin_names = list(filter(lambda name: name != '' and name != '...', linkedin_names))
-    linkedin_urls = [f'https://www.linkedin.com/in/{name}' for name in linkedin_names]
+    linkedin_links = driver.find_elements(by=By.XPATH, value='//div[contains(@class, "yuRUbf")]/a')
+    linkedin_urls = [link.get_attribute('href') for link in linkedin_links]
     
     return linkedin_urls
 
@@ -96,6 +94,8 @@ def main():
     for url in urls:
         lead = create_lead(url)
         writer.writerow([lead.get('name'), lead.get('job'), lead.get('company'), lead.get('location')])
+    
+    driver.quit()
 
 
 if __name__ == '__main__':

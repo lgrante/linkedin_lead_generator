@@ -20,3 +20,5 @@ Exemple:
 ```
 > python3 main.py john@mail.com mypwd1234 CTO Paris startup
 ```
+
+After the script ran, you can find the result in the leads.csv file.
