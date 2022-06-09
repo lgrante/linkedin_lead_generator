@@ -11,6 +11,7 @@ Launch a terminal and write these commands:
 ```
 > git clone https://github.com/lgrante/linkedin_lead_generator.git
 > cd linkedin_lead_generator
+> source ./bin/activate
 > python3 -m pip install -r requirements.txt
 > python3 main.py [your linkedin email] [your linkedin password] [...keywords]
 ```
